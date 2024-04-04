@@ -2,9 +2,13 @@ public class Movie {
     String name;
     int releaseYear;
     boolean include;
-    double rating;
-    int totalRatings;
+    private double rating;
+    private int totalRatings;
     int duration;
+
+    int getTotalRatings() {
+        return totalRatings;
+    }
 
     void displaySheet() {
         System.out.println("Movie Name: " + name);
