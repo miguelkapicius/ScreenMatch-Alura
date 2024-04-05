@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.models.Movie;
+import br.com.alura.screenmatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,5 +17,11 @@ public class Main {
 
         System.out.println("Total Ratings: " + myMovie.getTotalRatings());
         System.out.println(myMovie.ratingAverage());
+
+        Series series = new Series();
+
+        series.setName("Banana");
+        series.setSeasons(6);
+
     }
 }
