@@ -1,27 +1,41 @@
+import br.com.alura.screenmatch.calculation.TimeCalculator;
 import br.com.alura.screenmatch.models.Movie;
 import br.com.alura.screenmatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
+        Series mySeries = new Series();
 
-        myMovie.setName("Top Gun: Maverick");
-        myMovie.setReleaseYear(2022);
-        myMovie.setInclude(true);
-        myMovie.setDuration(128);
+        mySeries.setName("Top Gun: Maverick");
+        mySeries.setReleaseYear(2022);
+        mySeries.setInclude(true);
+        mySeries.setSeasons(10);
+        mySeries.setEpisodesPerSeason(5);
+        mySeries.setMinutesPerEpisode(30);
 
-        myMovie.displaySheet();
-        myMovie.rateMovie(8);
-        myMovie.rateMovie(5);
-        myMovie.rateMovie(10);
+        mySeries.displaySheet();
+        mySeries.rateMovie(8);
+        mySeries.rateMovie(5);
+        mySeries.rateMovie(10);
 
-        System.out.println("Total Ratings: " + myMovie.getTotalRatings());
-        System.out.println(myMovie.ratingAverage());
+        System.out.println("Total Ratings: " + mySeries.getTotalRatings());
+        System.out.println(mySeries.ratingAverage());
 
         Series series = new Series();
 
         series.setName("Banana");
         series.setSeasons(6);
 
+        System.out.println("Duration: " + mySeries.getDuration());
+
+        Movie myMovie = new Movie();
+        myMovie.setName("Minions");
+        myMovie.setReleaseYear(2021);
+        myMovie.setDuration(120);
+
+        TimeCalculator calculator = new TimeCalculator();
+        calculator.include(mySeries);
+        calculator.include(myMovie);
+        System.out.println(calculator.getTotalTime());
     }
 }

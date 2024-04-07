@@ -37,4 +37,9 @@ public class Series extends Movie {
     public void setMinutesPerEpisode(int minutesPerEpisode) {
         this.minutesPerEpisode = minutesPerEpisode;
     }
+
+    @Override // makes clear the change in relation to the mother class
+    public int getDuration() {
+        return seasons * episodesPerSeason * minutesPerEpisode;
+    }
 }
