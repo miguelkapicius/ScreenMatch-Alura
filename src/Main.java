@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.models.Episode;
 import br.com.alura.screenmatch.models.Movie;
 import br.com.alura.screenmatch.models.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Series mySeries = new Series();
@@ -50,5 +52,14 @@ public class Main {
         episode.setSeries(mySeries);
         episode.setTotalViews(250);
         filter.filter(episode);
+
+        ArrayList<Movie> moviesList = new ArrayList<>();
+        moviesList.add(myMovie);
+        moviesList.add(mySeries);
+        moviesList.add(series);
+
+        System.out.println(moviesList.size());
+        System.out.println(moviesList.get(0).getName());
+        System.out.println(moviesList.toString());
     }
 }

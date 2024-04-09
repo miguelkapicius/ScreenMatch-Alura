@@ -17,4 +17,9 @@ public class Movie extends List implements Classifiable {
     public int getClassification() {
         return (int) ratingAverage() / 2;
     }
+
+    @Override
+    public String toString() {
+        return "Movie: " + this.getName();
+    }
 }
