@@ -8,58 +8,49 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Series mySeries = new Series();
+        var myMovie2 = new Movie("Top Gun: Maverick", 2022);
+        myMovie2.setReleaseYear(2022);
+        myMovie2.setInclude(true);
 
-        mySeries.setName("Top Gun: Maverick");
-        mySeries.setReleaseYear(2022);
-        mySeries.setInclude(true);
-        mySeries.setSeasons(10);
-        mySeries.setEpisodesPerSeason(5);
-        mySeries.setMinutesPerEpisode(30);
 
-        mySeries.displaySheet();
-        mySeries.rateMovie(8);
-        mySeries.rateMovie(5);
-        mySeries.rateMovie(10);
+        myMovie2.displaySheet();
+        myMovie2.rateMovie(8);
+        myMovie2.rateMovie(5);
+        myMovie2.rateMovie(10);
 
-        System.out.println("Total Ratings: " + mySeries.getTotalRatings());
-        System.out.println(mySeries.ratingAverage());
+        System.out.println("Total Ratings: " + myMovie2.getTotalRatings());
+        System.out.println(myMovie2.ratingAverage());
 
-        Series series = new Series();
-
-        series.setName("Banana");
+        Series series = new Series("Banana", 2019);
         series.setSeasons(6);
 
-        System.out.println("Duration: " + mySeries.getDuration());
+        System.out.println("Duration: " + myMovie2.getDuration());
 
-        Movie myMovie = new Movie();
-        myMovie.setName("Minions");
+        Movie myMovie = new Movie("Minions", 2005);
         myMovie.setReleaseYear(2021);
         myMovie.setDuration(120);
 
         TimeCalculator calculator = new TimeCalculator();
-        calculator.include(mySeries);
+        calculator.include(myMovie2);
         calculator.include(myMovie);
         System.out.println(calculator.getTotalTime());
 
         RecommendationFilter filter = new RecommendationFilter();
-        System.out.println(mySeries.getClassification());
-        filter.filter(mySeries);
+        System.out.println(myMovie2.getClassification());
+        filter.filter(myMovie2);
 
         Episode episode = new Episode();
 
         episode.setNumber(1);
-        episode.setSeries(mySeries);
         episode.setTotalViews(250);
         filter.filter(episode);
 
         ArrayList<Movie> moviesList = new ArrayList<>();
         moviesList.add(myMovie);
-        moviesList.add(mySeries);
-        moviesList.add(series);
+        moviesList.add(myMovie2);
 
         System.out.println(moviesList.size());
         System.out.println(moviesList.get(0).getName());
-        System.out.println(moviesList.toString());
+        System.out.println(moviesList);
     }
 }

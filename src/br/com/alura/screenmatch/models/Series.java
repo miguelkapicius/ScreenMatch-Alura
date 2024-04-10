@@ -1,10 +1,15 @@
 package br.com.alura.screenmatch.models;
 
-public class Series extends Movie {
+public class Series extends List {
     private int seasons;
     private int episodesPerSeason;
     private boolean active;
     private int minutesPerEpisode;
+
+    // Constructor
+    public Series(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
 
     public int getSeasons() {
         return seasons;

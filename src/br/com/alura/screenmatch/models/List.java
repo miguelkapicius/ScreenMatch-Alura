@@ -8,6 +8,12 @@ public class List {
     private int totalRatings;
     private int duration;
 
+    // Constructor
+    public List(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

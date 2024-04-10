@@ -5,6 +5,11 @@ import br.com.alura.screenmatch.calculation.Classifiable;
 public class Movie extends List implements Classifiable {
     private String director;
 
+    // Constructor
+    public Movie(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -20,6 +25,6 @@ public class Movie extends List implements Classifiable {
 
     @Override
     public String toString() {
-        return "Movie: " + this.getName();
+        return "Title: " + this.getName() + " (" + this.getReleaseYear() + ")";
     }
 }
