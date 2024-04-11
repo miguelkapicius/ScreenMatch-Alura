@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.main;
+
 import br.com.alura.screenmatch.calculation.RecommendationFilter;
 import br.com.alura.screenmatch.calculation.TimeCalculator;
 import br.com.alura.screenmatch.models.Episode;
@@ -14,9 +16,9 @@ public class Main {
 
 
         myMovie2.displaySheet();
-        myMovie2.rateMovie(8);
-        myMovie2.rateMovie(5);
-        myMovie2.rateMovie(10);
+        myMovie2.rate(8);
+        myMovie2.rate(5);
+        myMovie2.rate(10);
 
         System.out.println("Total Ratings: " + myMovie2.getTotalRatings());
         System.out.println(myMovie2.ratingAverage());

@@ -55,7 +55,7 @@ public class List {
         System.out.println("Release Year: " + releaseYear);
     }
 
-    public void rateMovie(double grade) {
+    public void rate(double grade) {
         rating += grade;
         totalRatings++;
     }
